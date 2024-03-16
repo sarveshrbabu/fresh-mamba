@@ -16,7 +16,7 @@ from accelerate import PartialState
 device_string = PartialState().process_index
 model = AutoModelForCausalLM.from_pretrained(
     model_name,
-    device_map={'': device_string}
+    device_map="auto"
 )
 
 print(model)
@@ -56,7 +56,7 @@ from transformers import TrainingArguments
 training_args = TrainingArguments(
     output_dir="./results",
     num_train_epochs=1,
-    per_device_train_batch_size=4,
+    per_device_train_batch_size4,
     logging_dir='./logs',
     logging_steps=10,
     learning_rate=2e-3,
